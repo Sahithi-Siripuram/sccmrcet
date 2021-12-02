@@ -8,6 +8,8 @@
           <br>
           <input type="text" class="form1" v-model="studentName" name="studentName" placeholder="Student Name" required>
           <br>
+          <input type="text" class="form1" v-model="subject" name="subject" placeholder="Title" required>
+          <br>
           <input type="text" class="form2" v-model="grevience" name="grevience" placeholder="Grevience" required>
           <br>
           <input type="submit" class="form" name="submit" @click="submit($event)" value="Submit">
@@ -16,6 +18,7 @@
       <!-- <div v-for="link in links">
         <div>{{link.studentRollNo}}</div>
         <div>{{link.studentName}}</div>
+        <div>{{link.subject}}</div>
         <div>{{link.grevience}}</div>
       </div> -->
     </div>
@@ -23,34 +26,36 @@
 </template>
 
 <script>
-import Links from '../../api/collections/Links'
+// import Links from '../../api/collections/Links'
 
 export default {
   name:'grevience',
-  data() {
-    return {
-      studentRollNo: "",
-      studentName: "",
-      grevience:"",
-    }
-  },
+  // data() {
+  //   return {
+  //     studentRollNo: "",
+  //     studentName: "",
+  //     subject:"",
+  //     grevience:"",
+  //   }
+  // },
   meteor: {
     $subscribe: {
       'links': [],
     },
-    links () {
-      return Links.find({})
-    },
+    // links () {
+    //   return Links.find({})
+    // },
   },
   methods: {
     submit(event) {
       event.preventDefault()
-      Meteor.call('createLink', this.studentRollNo, this.studentName,this.grevience, (error) => {
+      Meteor.call('createLink', this.studentRollNo, this.studentName,this.subject,this.grevience, (error) => {
         if (error) {
           alert(error.error)
         } else {
           this.studentRollNo = ''
           this.studentName = ''
+          this.subject = ''
           this.grevience = ''
           alert("your grevience has been submitted")
         }

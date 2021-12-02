@@ -9,11 +9,6 @@ import Links from './Links.js';
 if (Meteor.isServer) {
   describe('links collection', function () {
     it('insert correctly', function () {
-      const linkId = Links.insert({
-        studentRollNo: '18h51a0584',
-        studentName: "sahithi",
-        grevience:"testing",
-      });
       const added = Links.find({ _id: linkId });
       const collectionName = added._getCollectionName();
       const count = added.count();
