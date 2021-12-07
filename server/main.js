@@ -1,3 +1,5 @@
 // import '../imports/api/fixtures'
 import '../imports/api/methods'
 import '../imports/api/publications'
+import { Meteor } from 'meteor/meteor'
+import { Accounts } from 'meteor/accounts-base'

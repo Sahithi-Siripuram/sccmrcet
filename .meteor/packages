@@ -24,3 +24,10 @@ meteortesting:mocha               # A package for writing and running your meteo
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
 accounts-ui
 accounts-google
+accounts-password
+vuejs:blaze-integration
+accounts-ui-unstyled
+bootstrap
+service-configuration
+google-config-ui
+mizzao:bootstrap-3
